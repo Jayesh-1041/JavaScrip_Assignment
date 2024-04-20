@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            text-align: center;
+        }
+
+        .one label {
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .one input {
+            padding: 6px 50px;
+            margin-left: 9px;
+        }
+
+        .two {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .two label {
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .two input {
+            padding: 6px 50px;
+        }
+
+        .btn {
+            text-align: center;
+            margin-top: 32px;
+            margin-right: 47px;
+
+        }
+
+        .btn button {
+            padding: 1px 17px;
+            font-size: 34px;
+            margin-left: 54px
+        }
+    </style>
+</head>
+<body>
+
+    <div class="one">
+        <label for="">Enter 1st Number:</label>
+        <input type="text" id="input1Number">
+    </div>
+    <div class="two">
+        <label for="">Enter 2nd Number:</label>
+        <input type="text" id="input2Number">
+    </div>
+    <div class="btn">
+        <button class="addition">+</button>
+        <button class="subtraction">-</button>
+        <button class="multiply">*</button>
+        <button class="division">/</button>
+        <button class="modulus">%</button>
+    </div>
+
+
+        <script>
+
+        let input1Number = document.getElementById('input1Number');
+        let input2Number = document.getElementById('input2Number');
+        let addition = document.getElementsByClassName('addition')[0];
+        let subtraction = document.getElementsByClassName('subtraction')[0];
+        let multiply = document.getElementsByClassName('multiply')[0];
+        let division = document.getElementsByClassName('division')[0];
+        let modulus = document.getElementsByClassName('modulus')[0];
+
+        addition.addEventListener('click', () => {
+            let input1Number = Number(document.getElementById('input1Number').value);
+            let input2Number = Number(document.getElementById('input2Number').value);
+            console.log(inputValue(input1Number, input2Number))
+        })
+
+        subtraction.addEventListener('click', () => {
+            let input1Number = Number(document.getElementById('input1Number').value);
+            let input2Number = Number(document.getElementById('input2Number').value);
+            console.log(inputValue1(input1Number, input2Number))
+        })
+
+        multiply.addEventListener('click', () => {
+            let input1Number = Number(document.getElementById('input1Number').value);
+            let input2Number = Number(document.getElementById('input2Number').value);
+            console.log(inputValue2(input1Number, input2Number))
+        })
+
+        division.addEventListener('click', () => {
+            let input1Number = Number(document.getElementById('input1Number').value);
+            let input2Number = Number(document.getElementById('input2Number').value);
+            console.log(inputValue3(input1Number, input2Number))
+        })
+        modulus.addEventListener('click', () => {
+            let input1Number = Number(document.getElementById('input1Number').value);
+            let input2Number = Number(document.getElementById('input2Number').value);
+            console.log(inputValue4(input1Number, input2Number))
+        })
+        function inputValue(input1Number, input2Number) {
+            return input1Number + input2Number
+        }
+        function inputValue1(input1Number, input2Number) {
+            return input1Number - input2Number
+        }
+
+        function inputValue2(input1Number, input2Number) {
+            return input1Number * input2Number
+        }
+
+        function inputValue3(input1Number, input2Number) {
+            return input1Number / input2Number
+        }
+
+        function inputValue4(input1Number, input2Number) {
+            return input1Number % input2Number
+        }
+
+    </script>
+</body>
+</html>

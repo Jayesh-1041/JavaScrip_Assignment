@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+                margin-top: 20px;
+            }
+
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: lightblue;
+                margin: 5px;
+                display: inline-block;
+            }
+    </style>
 </head>
 <body>
+        <h1>Click the radio button And check password</h1>
+    <label>password:</label><br>
+    <input type="password" id="showToHide"><br><br>
+    <input type="checkbox" onclick="myFunction()">Show Password
+
     <script>
 //         function mul() {
 //     if (arguments.length === 0) {
@@ -388,35 +406,408 @@
 
         // let number = 1523;
         // console.log(digitSum(number));
-        for (let i = 1; i <= 5; i++) {
-            let result = "";
-            for (let j = 1; j <= 5; j++) {
-                if (j === 1) {
-                    result += i + " ";
-                } else {
-                    result += Math.pow(i, j) + " ";
-                }
-            }
-            console.log(result);
-        }
+        // for (let i = 1; i <= 5; i++) {
+        //     let result = "";
+        //     for (let j = 1; j <= 5; j++) {
+        //         if (j === 1) {
+        //             result += i + " ";
+        //         } else {
+        //             result += Math.pow(i, j) + " ";
+        //         }
+        //     }
+        //     console.log(result);
+        // }
 
         
-        let result = '';
-        let counter = 0;
-        for (i = 0; i < 5; i++) {
-            for (j = 0; j < i; j++) {
-                if (result.charAt(result.length - 1) == '1') {
-                    result = result + '0';
-                } else {
-                    result = result + '1';
-                }
+        // let result = '';
+        // let counter = 0;
+        // for (i = 0; i < 5; i++) {
+        //     for (j = 0; j < i; j++) {
+        //         if (result.charAt(result.length - 1) == '1') {
+        //             result = result + '0';
+        //         } else {
+        //             result = result + '1';
+        //         }
+        //     }
+        //     result = result + '\n';
+        // }
+
+        // console.log(result);
+
+        
+        // let string = prompt('please Enter your palindrome')
+        // let len = string.length;
+        // let msg = 'is a palindrome'
+        // for (let i = 0; i < len / 2; i++) {
+        //     if (string[i] != string[len - 1 - i]) {
+        //         msg = 'not is a palindrome';
+        //     }
+        // };
+
+        // console.log(`${string}: ${msg}`);
+
+//         function isPalindrome(num) {
+//     let reversedNum = parseInt(num.toString().split('').reverse().join(''));
+//     return num === reversedNum;
+// }
+
+// let count = 1;
+// while (count <= 3) {
+//     let number = prompt(`Enter number ${count}:`);
+//     if (isPalindrome(number)) {
+//         console.log(`${number} is a palindrome.`);
+//     } else {
+//         console.log(`${number} is not a palindrome.`);
+//     }
+//     count++;
+// };
+
+// let day = new Date().getDate();
+//         let hours = new Date().getHours();
+//         let minutes = new Date().getMinutes();
+//         let seconds = new Date().getSeconds();
+
+//         let time = `${hours}:${minutes}:${seconds} ${hours < 12 ? 'AM' : 'PM'}`;
+
+//         let dayInDigit = new Date().getDay();
+//         // dayInDigit = 2;
+//         let dayInWord;
+//         switch (dayInDigit) {
+//             case 0:
+//                 dayInWord = 'Sunday';
+//                 break;
+//             case 1:
+//                 dayInWord = 'Monday';
+//                 break;
+//             case 2:
+//                 dayInWord = 'Tuesday';
+//                 break;
+//             case 3:
+//                 dayInWord = 'Wednesday';
+//                 break;
+//             case 4:
+//                 dayInWord = 'Thursday';
+//                 break;
+//             case 5:
+//                 dayInWord = 'Friday';
+//                 break;
+//             case 6:
+//                 dayInWord = 'Saturday';
+//                 break;
+//         }
+
+//         console.log(dayInWord);
+//         console.log(time)
+
+//         let result = `Current day is ${dayInWord} and current time is ${time}`;
+//         console.log(result);
+
+//         let currentDate = new Date().getDate()
+// console.log(currentDate);
+
+
+// let obj1 = {
+//             age: 25,
+//             roll: 10,
+//             bDate: 17 / 6 / 1998,
+//             // name: vimal,
+//         };
+//         let obj2 = {
+//             age: 25,
+//             roll: 10,
+//             bDate: 17 / 6 / 1998,
+
+//         };
+
+//         console.log(obj1 == obj2);
+//         console.log(obj1 == obj2);
+
+// function compareObjects(obj1, obj2) {
+//     const keys1 = Object.keys(obj1);
+//     const keys2 = Object.keys(obj2);
+
+//     if (keys1.length !== keys2.length) {
+//         return false;
+// };
+
+// for (let key of keys1) {
+//         if (obj1[key] !== obj2[key]) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// };
+
+// const obj1 = { a: 1, b: 2, c: 3 };
+// const obj2 = { a: 1, b: 2, c: 3 };
+// const obj3 = { a: 1, b: 2, c: 4 };
+
+// console.log(compareObjects(obj1, obj2)); // true
+// console.log(compareObjects(obj1, obj3)); // false
+
+// const convertCSV = data =>
+//             [Object.keys(data[0]).join(','), ...data.map(obj => Object.values(obj).join(','))].join('\n');
+
+//         // Example usage:
+//         const data = [
+//             { name: 'jayesh', age: 30, city: 'Somnath' },
+//             { name: 'Bharat', age: 25, city: 'Ahemdabad' },
+//             { name: 'Dhiraj', age: 22, city: 'Surat' }
+//         ];
+
+//         const csvString = convertCSV(data);
+//         console.log(csvString);
+
+
+
+// let myString = 'jayesh';
+
+//         let upperJayesh = myString[0].toUpperCase();
+//         console.log(upperJayesh)
+
+//         let sliceJayesh = myString.slice(1, myString.length);
+//         console.log(sliceJayesh);
+
+//         let resultedName = upperJayesh + sliceJayesh;
+//         console.log(resultedName);
+
+        // function isArray(variable) {
+        //     return Array.isArray(variable)
+        // }
+
+        // let arr = [1, 2, 3];
+        // let notArr = "This is not an array";
+
+        // console.log(isArray(arr));
+        // console.log(isArray(notArr));
+
+        // let cloneArray = [1, 2, 3, 4, 5];
+
+        // let clone = cloneArray.slice();
+
+        // console.log(clone);
+
+//         function Person(name, age) {
+//     this.name = name;
+//     this.age = 30;
+//     this.sayHello = function() {
+//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+//     };
+// }
+
+// let person1 = new Person("Alice", 30);
+// let person2 = new Person("Bob", 25);
+
+// console.log(person1.sayHello === person2.sayHello); 
+
+// let myObject = {
+//     try() {
+//         console.log("front end");
+//     }
+// };
+
+// const obj1 = Object.create(myObject);
+// const obj2 = Object.create(myObject);
+
+// console.log(obj1.method === obj2.method);
+
+
+// let str = "bro  w e ser  u si ng 1 fr ont e nd";
+// console.log(str.length);
+
+// let main = 'jayesh mer'
+//         let toUpperCase = main.toUpperCase();
+//         console.log(toUpperCase);
+
+//         let myObject = {
+//     try() {
+//         console.log("devloper");
+//     }
+// };
+
+// const obj1 = Object.create(myObject);
+// const obj2 = Object.create(myObject);
+
+// console.log(obj1.method === obj2.method);
+
+// let month = new Date().getMonth() + 1;
+//         let day = new Date().getDate();
+//         let year = new Date().getFullYear();
+
+//         console.log(`${month}/${day}/${year}`)
+
+
+
+//         let month2 = new Date().getMonth() + 1;
+//         let day2 = new Date().getDate();
+//         let year2 = new Date().getFullYear();
+
+//         console.log(`${day}/${month}/${year}`)
+
+
+        // let main = '30 Days of javascript?'
+        // let indexOf = main.indexOf('0');
+        // console.log(indexOf);
+
+//         <!-- <!DOCTYPE html>
+// <html>
+// <head>
+//     <title>Dynamic Form Validation</title>
+//     <style>
+//         .error {
+//             color: red;
+//         }
+//     </style>
+// </head>
+// <body>
+//     <form id="myForm" onsubmit="return validateForm()">
+//         <label for="name">Name:</label>
+//         <input type="text" id="name" name="name"><span id="nameError" class="error"></span><br><br>
+//         <label for="email">Email:</label>
+//         <input type="email" id="email" name="email"><span id="emailError" class="error"></span><br><br>
+//         <label for="age">Age:</label>
+//         <input type="number" id="age" name="age"><span id="ageError" class="error"></span><br><br>
+//         <input type="submit" value="Submit">
+//     </form>
+
+//     <script>
+//         function validateForm() {
+//             let name = document.getElementById('name').value;
+//             let email = document.getElementById('email').value;
+//             let age = document.getElementById('age').value;
+//             let isValid = true;
+
+//             if (name === "") {
+//                 document.getElementById('nameError').textContent = 'Name is required';
+//                 isValid = false;
+//             } else {
+//                 document.getElementById('nameError').textContent = '';
+//             }
+
+//             if (email === "") {
+//                 document.getElementById('emailError').textContent = 'Email is required';
+//                 isValid = false;
+//             } else {
+//                 document.getElementById('emailError').textContent = '';
+//             }
+
+//             if (age === "" || isNaN(age) || age < 18) {
+//                 document.getElementById('ageError').textContent = 'Age must be a number and at least 18';
+//                 isValid = false;
+//             } else {
+//                 document.getElementById('ageError').textContent = '';
+//             }
+
+//             return isValid;
+//         } -->
+
+// let str = "JavaScript is a scripting language";
+// let word = "Script";
+
+// if (str.includes(word)) {
+//     console.log("The string contains the word 'Script'");
+// } else {
+//     console.log("The string does not contain the word 'Script'");
+// }
+
+// let str = '30 Days of JavaScript';
+//         let char = str.charAt(15);
+//         console.log(char);
+
+        // const originalString = 'I am Web development Engineer ';
+        // let copiedString = originalString;
+        // console.log(copiedString);
+
+//         let myString = "Web Development Engineer";
+//         let length = myString.split('').length;
+//         console.log(length);
+
+//         console.log(isNaN(123));     
+
+// console.log(isNaN('hello')); 
+
+// Var = 10; 
+// console.log(Var);
+
+// let myVar;
+// console.log(myVar);
+
+
+            
+    
+       
+    
+        // function addElement() {
+        // let newElement = document.createElement('div');
+        // newElement.className = 'box';
+        // newElement.textContent = 'New Element';
+        // document.getElementById('elementContainer').appendChild(newElement);
+        // };
+
+//         let result = 0;
+//     for (count = 1; count < 101; count++){
+//         result=result + count;
+//     };
+
+//     console.log(result);
+
+//     let result = 0;
+//     count = 0;
+//     while (count <= 100 ){
+//         result = result + count;
+//         count++;
+//     };
+//         console.log(result);
+
+//         let result = 0;
+//     let count = 0;
+//     do{
+//         result = result + count;
+//         count++;
+//     } while(count <= 100);
+
+//     console.log(result);
+
+// numbers = [10,11,12,13,14,15];
+//     let result = 0
+//     for (item in numbers)
+//     result = result + item;
+
+//     console.log(result);
+
+//     numbers = [10,11,12,13,14,15];
+//         let result = 0
+//         for (item of numbers)
+//         result = result + item;
+
+//         console.log(result);
+
+
+        // const person = { name: 'mitesh', age: 25 };
+        // delete person.age;
+        // console.log(person);
+
+        
+
+        // // 2.Deleting Array Elements
+        // const numbers = [1, 2, 3, 4, 5];
+        // delete numbers[2];
+        // console.log(numbers);
+
+        // alert('this is jayesh');
+        // confirm('enter Your name');
+        // prompt('enter your age');
+
+        
+        function myFunction() {
+            let check = document.getElementById("showToHide");
+            if (check.type === "password") {
+                check.type = "text";
+            } else {
+                check.type = "password";
             }
-            result = result + '\n';
-        }
-
-        console.log(result);
-
-
+        };
     </script>
 </body>
 </html>
