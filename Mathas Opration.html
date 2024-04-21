@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .operator{
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 50px;
+        }
         .one {
             text-align: center;
+            margin-top: 50px;
         }
 
         .one label {
@@ -15,8 +22,8 @@
         }
 
         .one input {
-            padding: 6px 50px;
-            margin-left: 9px;
+            padding:6px 0px 6px 6px;
+            margin-left: 11px;
         }
 
         .two {
@@ -30,12 +37,20 @@
         }
 
         .two input {
-            padding: 6px 50px;
+            padding:6px 0px 6px 6px;
         }
+
+        /* .answer{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: cornflowerblue;
+            text-align: center;
+            margin-top: 50px;
+        } */
 
         .btn {
             text-align: center;
-            margin-top: 32px;
+            margin-top: 50px;
             margin-right: 47px;
 
         }
@@ -49,6 +64,8 @@
 </head>
 <body>
 
+    <div class="operator">Maths Operations</div>
+
     <div class="one">
         <label for="">Enter 1st Number:</label>
         <input type="text" id="input1Number">
@@ -57,6 +74,9 @@
         <label for="">Enter 2nd Number:</label>
         <input type="text" id="input2Number">
     </div>
+
+    <!-- <div class="answer">Answer is :</div> -->
+
     <div class="btn">
         <button class="addition">+</button>
         <button class="subtraction">-</button>
@@ -79,49 +99,52 @@
         addition.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue(input1Number, input2Number))
-        })
+            console.log(inputValue(input1Number, input2Number));
+        });
 
         subtraction.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue1(input1Number, input2Number))
-        })
+            console.log(inputValue1(input1Number, input2Number));
+        });
 
         multiply.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue2(input1Number, input2Number))
-        })
+            console.log(inputValue2(input1Number, input2Number));
+        });
 
         division.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue3(input1Number, input2Number))
-        })
+            console.log(inputValue3(input1Number, input2Number));
+        });
+
         modulus.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue4(input1Number, input2Number))
-        })
+            console.log(inputValue4(input1Number, input2Number));
+        });
+
         function inputValue(input1Number, input2Number) {
             return input1Number + input2Number
-        }
+        };
+
         function inputValue1(input1Number, input2Number) {
             return input1Number - input2Number
-        }
+        };
 
         function inputValue2(input1Number, input2Number) {
             return input1Number * input2Number
-        }
+        };
 
         function inputValue3(input1Number, input2Number) {
             return input1Number / input2Number
-        }
+        };
 
         function inputValue4(input1Number, input2Number) {
             return input1Number % input2Number
-        }
+        };
 
     </script>
 </body>

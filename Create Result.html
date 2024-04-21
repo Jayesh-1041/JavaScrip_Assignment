@@ -8,18 +8,21 @@
 </head>
 <style>
     #main {
-        width: 20%;
-        height: 600px;
+        width: 50%;
+        height: 650px;
         background: aquamarine;
         margin: auto;
         border: 2px solid black;
         border-radius: 10px;
     }
+    h2{
+        margin-left: 50px;
+    }
 
     h1 {
         text-align: center;
         font-size: 36px;
-        padding-top: 10px;
+        color: rgb(88, 71, 49);
     }
 
     .c,
@@ -30,8 +33,6 @@
     .php,
     .coreJava {
         width: 100%;
-        /* background: rebeccapurple; */
-        text-align: center;
         padding-top: 18px;
     }
 
@@ -42,7 +43,8 @@
     .css input,
     .php input,
     .coreJava input {
-        width: 45%;
+        text-align: center;
+        width: 40%;
         padding: 10px;
         border-radius: 10px;
     }
@@ -55,41 +57,88 @@
 
     .btn button {
         padding: 4px 30px;
+        border-radius: 10px;
+        margin-left: 90px;
         font-size: 20px;
-        text-transform: uppercase;
+        background-color: #ecb7b7;
         font-weight: 900;
     }
+    .span{
+        margin-left: 55px;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    #c{
+        margin-left: 100px;
+    }
+    #cpp{
+        margin-left: 72px;
+    }
+    #database{
+        margin-left: 125px;
+    }
+    #html{
+        margin-left: 150px;
+    }
+    #css{
+        margin-left: 180px;
+    }
+    #php{
+        margin-left: 175px;
+    }
+    #coreJava{
+        margin-left: 118px;
+    }
+    .total{
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-left: 150px;
+        color:rgb(32, 32, 56);
+        
+    }
+    .percentage{
+        font-size: 1.3rem;
+        font-weight: 600;
+        color:rgb(32, 32, 56); 
+        margin-left: 150px;
+        padding-top: 20px; 
+    }
+   
 </style>
 
 <body>
 
     <section id="main">
+        <h2>Marksheet for Information Technology</h2>
         <h1>Enter Marks</h1>
         <form action="">
-            <div class="c">
+            <div class="c"><span class="span">1. C Language</span> 
                 <input type="text" id="c" placeholder="C Language" required>
             </div>
-            <div class="cpp">
+            <div class="cpp"><span class="span">2. C++ Language</span> 
                 <input type="text" id="cpp" placeholder="C++ Language" required>
             </div>
-            <div class="database">
+            <div class="database"><span class="span">3. DataBase</span>
                 <input type="text" id="database" placeholder="DataBase" required>
             </div>
-            <div class="html">
+            <div class="html"><span class="span">4. HTML</span>
                 <input type="text" id="html" placeholder="HTML" required>
             </div>
-            <div class="css">
+            <div class="css"><span class="span">5. CSS</span>
                 <input type="text" id="css" placeholder="CSS" required>
             </div>
-            <div class="php">
+            <div class="php"><span class="span">6. PHP</span>
                 <input type="text" id="php" placeholder="PHP" required>
             </div>
-            <div class="coreJava">
+            <div class="coreJava"><span class="span">7. Core Java</span>
                 <input type="text" id="coreJava" placeholder="Core Java" required>
             </div>
             <div class="btn">
                 <button>Result</button>
             </div>
+            <span class="total">Total is:  /700</span>
+            <span class="percentage">Percentage is:   %</span>
         </form>
     </section>
 
@@ -105,6 +154,7 @@
             let css = Number(document.getElementById('css').value);
             let php = Number(document.getElementById('php').value);
             let coreJava = Number(document.getElementById('coreJava').value);
+            let totalIs = Number(document.getElementsByClassName('total').value);
 
             let totalMarks = c + cpp + database + html + css + php + coreJava;
             console.log(totalMarks)
