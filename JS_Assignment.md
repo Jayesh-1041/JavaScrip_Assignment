@@ -54,13 +54,14 @@ Example :- c = undefined;
 
 ### **Q-4** Write a mul Function Which will Work Properly When invoked With Following Syntax.
 
-**ANS.** function mul(a) {
+**ANS.** 
+function mul(a) {
             return function(b){
                 return function(c){
                     return a * b * c ;
                 };
             }
-}
+};
 
         console.log(mul(4)(2)(3));
          
