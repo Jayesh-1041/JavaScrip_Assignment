@@ -125,10 +125,7 @@ console.log(`The area of the triangle with base ${base} and height ${height} is 
 **ANS**
  currentDay = new Date().getDate();
       let isLeapYear = false;
-      //   currentMonth = new Date().getMonth();
       currentMonth = 28;
-      //   console.log(currentDay);
-      //   console.log(currentMonth);
 
       let countOfDayInCurrentMonth;
       if (
@@ -153,8 +150,6 @@ console.log(`The area of the triangle with base ${base} and height ${height} is 
 
       daysLeftInCurrentMonth = countOfDayInCurrentMonth - currentDay;
       daysLeftTillDecMonth = 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30;
-      //   console.log(daysLeftIncurrentMonth);
-      //   console.log(daysLeftTillDecMonth);
 
       daysLeftTillChristmasFromToday =
         daysLeftInCurrentMonth + daysLeftTillDecMonth + 25;
