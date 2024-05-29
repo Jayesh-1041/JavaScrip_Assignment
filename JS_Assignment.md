@@ -101,33 +101,31 @@
 
 **ANS.** 
 
-    10 is number
-    let cheek1 = 10;
+    const value1 = '10';
+    const value2 = 10;
 
-    '10' is string
-    let cheek2 = '10';
+    const convertedValue = makeExactlyEqual(value1, value2);
 
-    not are that sem this === operator number and value comper operator
-    console.log(cheek1===cheek2)
+    console.log(convertedValue);  Output: 10
+    console.log(typeof convertedValue);  Output: number
 
-    output = false
 
 
 ### **Q-8** Write a javaScript Program to find the area of a triangle ?
 
 **ANS.** 
 
-    var side1 = 5; 
-    var side2 = 6; 
-    var side3 = 7; 
 
-    var s = (side1 + side2 + side3) / 2;
+    function triangleArea(base, height) {
+    return 0.5 * base * height;
+    }
 
-    var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+    let baseLength = 10;
+    let heightLength = 5;
+    let area = triangleArea(baseLength, heightLength);
+    console.log(`The area of the triangle is: ${area}`);
 
-    console.log(area);
-
-    Output = 14.69
+    Output = The area of the triangle is: 25
 
 
 
@@ -167,14 +165,6 @@
         daysLeftInCurrentMonth + daysLeftTillDecMonth + 25;
 
       console.log(daysLeftTillChristmasFromToday);
-
-      function mul(firstNumber, secondNumber) {
-        console.log(firstNumber * secondNumber);
-      }
-
-      mul(10, 20);
-
-      daysLeftTillChristmasFromToday = 287
 
 
 
@@ -230,6 +220,7 @@
                            break;
                        case marks >= 70:
                            Subject = "English";
+                           break;
                        case marks >= 60:
                            Subject = "Science";
                            break;
@@ -261,13 +252,13 @@
 
 **ANS**
 
-        let a = 10;
-        let b = 20;
-        let c = 30 * a;
+        let r = 4;
+        let a = 20;
+        let c = 2 * 3.14 * r;
 
         console.log(c);
 
-        Output = 300
+        Output = 25.12
 
 ### **Q-12**    WAP to convert years into days and days into years? 
 
@@ -324,6 +315,18 @@
 
 **ANS**
 
+    ==> In JavaScript, the && (AND) (returns true if any true) operator expressions from left to right and returns the first falsy value it encounters. If all values are truthy, it returns the last value.
+
+    ==> (true && 1 && "hello")
+
+    => `true` is a truthy value.
+    => `1` is also a truthy value.
+    => `"hello"` is a truthy value as well.
+
+    => Since all the values are truthy, the && operator will return the last value, which is "hello".
+
+    => Therefore, the result of the expression (true && 1 && "hello") is "hello".
+
     console.log(true && 1 && "hello");
 
     Output= hello
@@ -333,14 +336,29 @@
 
 **ANS**
 
+    ==> In JavaScript, the logical operators && (AND) and || (OR) have specific behaviors. The && operator has  higher precedence than the || operator, so it is evaluated first.
+
+    => true && false || false && true
+
+    => Evaluate the first part: true && false
+
+    => true && false evaluates to false because both operands must be true for the && operator to return true.
+    Evaluate the second part: false && true
+
+    => false && true evaluates to false because both operands must be true for the && operator to return true.
+    => false || false evaluates to false because at least one operand must be true for the || operator to return true.
+    => Therefore, the result of the expression true && false || false && true is false.
+
     console.log((true && false) || (false && true));
 
     Output= false
 
 
-**Q-18**    What is a Loop and Switch Case in JavaScript define that ? 
+### **Q-18**    What is a Loop and Switch Case in JavaScript define that ? 
 
 **ANS**
+
+       ==> A switch is used to used in place of multiple if else statements and is time and memory saving. A loop is a repetitive statement which meets a set of defined conditions by the programmer.
 
         let loop;
 
@@ -379,19 +397,36 @@
 
 **ANS**
 
-    In JavaScript, the isNaN() function is used to determine whether a value is NaN (Not-a-Number). This function returns true if the value is NaN, and false otherwise.
+    => In JavaScript, the isNaN() function is used to determine whether a value is NaN.
+    => This behavior is because NaN is not a valid number, and thus cannot be compared to any other value.
 
-    console.log(isNaN(123));
-    Output= false, 123 is number
+    let x = null;
+    let y;
 
-    console.log(isNaN('Jayesh'));
-    Output = True 'Jayesh' can not be converted to a number
+    console.log(x == y); Output = true
 
-    console.log(isNaN(NaN));
-    Output = True NaN is not a number
+    console.log(x === y); Output = false 
 
-    console.log(isNaN('123'));
-    Output = False '123' can be converted to the number 123
+
+    console.log(NaN == null); Output = false
+
+    console.log(NaN == undefined); Output = false
+
+    console.log(NaN == false); Output = false
+
+    console.log(NaN == true); Output = false
+
+    console.log(isNaN(NaN)); Output = true
+
+    console.log(isNaN("hello")); Output = true 
+
+    console.log(Number.isNaN(NaN)); Output = true
+
+    console.log(Number.isNaN("hello")); Output = false  
+
+    console.log(0 == false); Output = true
+
+    console.log(0 === false); Output = false        
 
 
 ### **Q-20**    What is the difference between && and || in JavaScript?
@@ -435,7 +470,7 @@
 
 
 
- **Q-22**    Check Number Is Positive or Negative in JavaScript?
+### **Q-22**    Check Number Is Positive or Negative in JavaScript?
 
 **ANS**
 
@@ -519,23 +554,16 @@
 
 **ANS**
 
-    const num1 = parseFloat(prompt("Enter first number: "));
-    const num2 = parseFloat(prompt("Enter second number: "));
-    const num3 = parseFloat(prompt("Enter third number: "));
+    => This function compares the three numbers using nested ternary operators. The first comparison checks if `a` is less than `b`, and within that check, it also compares `a` with `c` to determine the smallest value. If `a` is not less than `b`, it then compares `b` with `c` to find the minimum.
 
-    let minimum;
+    function findMinimum(a, b, c) {
+    return a < b ? (a < c ? a : c) : (b < c ? b : c);
+    };
 
-    if(num1 <= num2 && num1 <= num3) {
-        minimum = num1;
-    }
-    else if (num2 <= num1 && num2 <= num3) {
-        minimum = num2;
-    }
-    else {
-        minimum = num3;
-    }
-
-    console.log("The minimum number is ", minimum);
+    console.log(findMinimum(3, 5, 1));  Output: 1
+    console.log(findMinimum(7, 2, 5));  Output: 2
+    console.log(findMinimum(9, 9, 9));  Output: 9
+        
 
 
 ### **Q-28**    Write to find the largest of three numbers in JS?
@@ -630,54 +658,55 @@ ii. Vowel or Consonant using switch case in JS?
 
 **ANS**
 
-    1.for
+    ==> The JavaScript loops are used to iterate the piece of code using for, while, do while, for-in or for-of loops. It makes the code compact. It is mostly used in array.
 
-        const cars = ["Alto", "Innova", "Swift"];
-        let car = "";
-        for (let i = 0; i < cars.length; i++) {
-            car += cars[i] + ',';
+    =>There are five types of loops in JavaScript.
+
+    JavaScript Loop Statements:-
+
+    => `for`        Loops a coode block while a condition is true
+    => `while`      Loops a coode block while a condition is true
+    => `do...while` Loops a coode block once and then while a condition is true
+    => `for...of`   Loops the values of any iterable
+    => `for...in`   Loops the used for iterating over object properties   
+
+    1.for loop
+
+        let result = 0;
+        for(count = 1; count < 101; count++){
+            result = result + count;
+        };
+
+        console.log(result);
+
+        Output = 5050
+
+
+    2. while loop
+
+        let result = 0;
+        count = 0;
+        while (count <= 100){
+            result = result + count;
+            count ++;
+        };
+        
+        console.log(result);
+
+        Output = 5050
+
+
+    3. do...while loop
+        let result = 0;
+        count = 0;
+        do{
+            result = result + count;
+            count ++;
         }
-        console.log(car);
-        output = Alto=Innova=Swift
-
-
-    2.for/in
-        const person = {name:"Sachin", sname:"Tendulkar", age:35};
-        let man = "";
-        for (let x in person) {
-          man += person[x] + " ";
-        }
-        console.log(man);
-        output  = Sachin Tendulkar 35
-
-    3.for/of
-        const boys = ["mahesh", "bhavesh", "kesur"];
-        let boy = "";
-        for (let i = 0; i < boys.length; i++) {
-            boy += boys[i] + ',';
-        }
-        console.log(boy);
-
-    4.while
-        let check = "";
-        let i = 0;
-        while (i < 10) {
-            check += "This number is" + i + '\n';
-            i++;
-        } 
-        console.log(check);
-
-
-    5.do/while
-        let num = "";
-        let i = 0;
-        do {
-            num += i + "\n";
-            i++;
-        }
-        while (i < 5);
-        console.log(num);
-
+        while (count <= 100);
+        
+        console.log(result);
+        Output = 5050
 
 ### **Q-31**    Write a print 972 to 897 using for loop in JS?
 
@@ -738,30 +767,41 @@ ii. Vowel or Consonant using switch case in JS?
 
 **ANS**
 
-    function digitSum(number) {
-                let sum = 0;
-                while (number > 0) {
-                    sum += number % 10;
-                    number = Math.floor(number / 10);
-                }
-                return sum;
-            }
+    function sum_Of_Digits(n) {
+    if (n < 0) n = -n
+    let result = 0
 
-            let number = 1523;
-            console.log(digitSum(number));
+    while (n > 0) 
+    {
+        result -= n % 10
+        n = Math.floor(n / 10)
+    }
 
-    Output = 11
+    return result
+    }
+    console.log(sum_Of_Digits(1523));
+
+        Output = -11
 
 ### **Q-36**    Write a program you have to make a summation of first and last Digit. (E.g., 1234 Ans: -5) in JS? 
 
 **ANS**
 
-    const sumFirstAndLastDigit = number =>
-    parseInt(number.toString()[0]) +
-    parseInt(number.toString().slice(-1));
+    function sumFirstAndLastDigit(number) {
+    const numberString = number.toString();
 
+    const firstDigit = parseInt(numberString[0]);
+    const lastDigit = parseInt(numberString[numberString.length - 1]);
+    
+    const sum =  - firstDigit - lastDigit;
+    
+    return sum;
+    }
     const number = 1234;
-    console.log(sumFirstAndLastDigit(number));
+    const result = sumFirstAndLastDigit(number);
+    console.log(result);
+
+    Output = -5
 
 
 ### **Q-37**    Use console.log() and escape characters to print the following pattern in JS?
@@ -773,17 +813,15 @@ ii. Vowel or Consonant using switch case in JS?
 
 **ANS**
 
-    for (let i = 1; i <= 5; i++) {
-                let result = "";
-                for (let j = 1; j <= 5; j++) {
-                    if (j === 1) {
-                        result += i + " ";
-                    } else {
-                        result += Math.pow(i, j) + " ";
-                    }
-                }
-                console.log(result);
-            }
+for (let i = 1; i <= 5; i++) {
+    let firstColumn = i;
+    let secondColumn = 1;
+    let thirdColumn = i;
+    let fourthColumn = i * i;
+    let fifthColumn = i * i * i;
+    
+    console.log(`${firstColumn} ${secondColumn} ${thirdColumn} ${fourthColumn} ${fifthColumn}`);
+  };
 
 ### **Q-38**    Use pattern in console.log in JS?
 
@@ -955,45 +993,64 @@ K L M N O
 
 **ANS**
 
-    function compareObjects(obj1, obj2) {
-        const jayesh = Object.jay(obj1);
-        const navsad = Object.jay(obj2);
+        function compareObjects(obj1, obj2) {
+        if (typeof obj1 === 'object' && obj1 != null && typeof obj2 === 'object' && obj2 != null) {
+        if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+        return false;
+        };
 
-        if (jayesh.length !== navsad.length) {
+        for (let jay in obj1) {
+        if (!obj2.hasOwnProperty(jay)) {
             return false;
-    };
-
-    for (let jay of jayesh) {
-            if (obj1[jay] !== obj2[jay]) {
-                return false;
-            }
-        }
-
+        };
+        if (!compareObjects(obj1[jay], obj2[jay])) {
+            return false;
+        };
+        };
         return true;
-    };
+        } else {
+        return obj1 === obj2;
+        };
+        };
 
-    const obj1 = { a: 1, b: 2, c: 3 };
-    const obj2 = { a: 1, b: 2, c: 3 };
-    const obj3 = { a: 1, b: 2, c: 4 };
+        const obj1 = { a: 1, b: 2, c: 3 };
+        const obj2 = { a: 1, b: 2, c: 3 };
+        const obj3 = { a: 1, b: 2, c: 4 };
 
-    console.log(compareObjects(obj1, obj2));  true
-    console.log(compareObjects(obj1, obj3));  false
+        console.log(compareObjects(obj1, obj2)); // Output: true
+        console.log(compareObjects(obj1, obj3)); // Output: false
 
 
 ### **Q-43**    Write a JavaScript program to convert an array of objects into CSV string?
 
 **ANS**
 
-    const convertCSV = data =>
-            [Object.keys(data[0]).join(','), ...data.map(obj => Object.values(obj).join(','))].join('\n');
+    function arrayToCSV(array) {
+    if (!array.length) {
+        return '';
+    }
+
+    const headers = Object.keys(array[0]);
+    const csvRows = [headers.join(',')];
+
+    for (const obj of array) {
+        const values = headers.map(header => {
+            const escapedValue = ('' + obj[header]).replace(/"/g, '""');
+            return `"${escapedValue}"`;
+        });
+        csvRows.push(values.join(','));
+    }
+
+    return csvRows.join('\n');
+        }
 
         const data = [
-            { name: 'jayesh', age: 30, city: 'Somnath' },
-            { name: 'Bharat', age: 25, city: 'Ahemdabad' },
-            { name: 'Dhiraj', age: 22, city: 'Surat' }
+            { name: 'Jayesh', age: 30, city: 'Veraval' },
+            { name: 'Dhiraj', age: 25, city: 'Somanath' },
+            { name: 'Bhavesh', age: 35, city: 'Junagadh' }
         ];
 
-        const csvString = convertCSV(data);
+        const csvString = arrayToCSV(data);
         console.log(csvString);
 
 
