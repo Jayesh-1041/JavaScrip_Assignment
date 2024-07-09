@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign-Up Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .form{
+            height: auto;
+            width: 410px;
+            margin-left: 450px;
+            padding-left: 50px;
+            margin-top: 30px;
+            font-size: 2rem;
+            border-radius: 12px;
+            background-color: aqua;
+            border: 1px solid black;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        h3{
+            margin-left: 90px;
+            padding-bottom: 30px;
+    
+        }
+
+        input{
+            width: auto;
+            height: auto;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+        button{
+            width: 320px;
+            height: 60px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <form class="form">
+        <h3>Sign Up</h3>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <span id="usernameError"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email id">
+        <span id="emailError"></span>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <span id="passwordError"></span>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+        <span id="confirmPasswordError"></span>
+        <br><br>
+
+        <button type="button" onclick="validatForm()">SIGN UP</button>
+    </form>
+
+    <script>
+
+function validatForm() {
+
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirmPassword').value;
+
+            let isValid = true;
+
+            // username
+            if (username.trim() === '') {
+                document.getElementById('usernameError').textContent = 'Username is required';
+                isValid = false;
+            } else if (username.length < 3 || username.length > 25) {
+                document.getElementById('usernameError').textContent = 'Username must be between 3 and 25 characters';
+                isValid = false;
+            }
+
+            // email
+            if (email.trim() === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+
+            // password
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+            if (password.trim() === '') {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                isValid = false;
+            } else if (!passwordPattern.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters and include at least 1 lower case character, 1 upper case character, 1 number, and 1 special character';
+                isValid = false;
+            }
+
+            // confirm password
+            if (confirmPassword.trim() === '') {
+                document.getElementById('confirmPasswordError').textContent = 'Please confirm your password';
+                isValid = false;
+            } else if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            
+            }
+        }
+
+
+    </script>
+</body>
+</html>

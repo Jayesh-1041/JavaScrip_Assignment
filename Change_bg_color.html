@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js" integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+      body{
+        text-align: center;
+        margin-top: 100px;
+
+      }
+    
+      button{
+        text-align: center;
+        margin-top: 170px;
+        padding: 10px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+      }
+      
+    </style>
+</head>
+<body>
+  
+  <button id="changeColorButton">Change Background Color</button>
+
+  <script>
+    document.getElementById('changeColorButton').addEventListener('click', changeBackgroundColor);
+
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = getRandomColor();
+    }
+    
+    function getRandomColor() {
+        const letters = '123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    </script>
+     
+</body>
+</html>

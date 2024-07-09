@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mathas operator</title>
     <style>
         .operator{
             font-size: 2rem;
@@ -99,31 +99,31 @@
         addition.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue(input1Number, input2Number));
+            document.write(inputValue(input1Number, input2Number));
         });
 
         subtraction.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue1(input1Number, input2Number));
+            document.write(inputValue1(input1Number, input2Number));
         });
 
         multiply.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue2(input1Number, input2Number));
+            document.write(inputValue2(input1Number, input2Number));
         });
 
         division.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue3(input1Number, input2Number));
+            document.write(inputValue3(input1Number, input2Number));
         });
 
         modulus.addEventListener('click', () => {
             let input1Number = Number(document.getElementById('input1Number').value);
             let input2Number = Number(document.getElementById('input2Number').value);
-            console.log(inputValue4(input1Number, input2Number));
+            document.write(inputValue4(input1Number, input2Number));
         });
 
         function inputValue(input1Number, input2Number) {
